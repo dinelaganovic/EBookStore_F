@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
-import { MenuComponent } from './pages/menu/menu.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { UserhomeComponent } from './pages/userprofile/userhome/userhome.component';
@@ -14,10 +13,11 @@ import { AllbooksComponent } from './pages/userprofile/allbooks/allbooks.compone
 import { DashboardaComponent } from './pages/userprofile/dashboarda/dashboarda.component';
 import { AllordersComponent } from './pages/userprofile/allorders/allorders.component';
 import { ReppageComponent } from './pages/userprofile/reppage/reppage.component';
+import { BooksComponent } from './pages/books/books.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
-  {path:'menu',component:MenuComponent},
+  {path:'books',component: BooksComponent },
   {path:'about',component:AboutComponent},
   {path:'contact',component:ContactComponent},
   {path:'login', component:LoginComponent},
