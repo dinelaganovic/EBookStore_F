@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ebookstore';
+  title = 'Informacioni sistem Zavoda za Javno Zdravlje Sjenica';
 }
