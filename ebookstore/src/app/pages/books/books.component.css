@@ -2,5 +2,27 @@
     margin-top: 20px;
     margin-left: 20px;
     border:2px solid red;
-    background-color: rgba(107, 246, 80, 0.567);
+    background-color: rgba(8, 188, 8, 0.764);
+}
+h1{
+    padding-top: 30px;
+    text-shadow: 4px 4px #b72525;
+    text-align: center; 
+    color: rgb(50, 198, 75); 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.card p{
+    text-shadow: 2px 2px #b72525;
+    text-align: center; 
+    color: rgb(233, 240, 235); 
+    font-size: 35px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.card-body{
+    text-align: center;
+}
+.list-group-item{
+    text-align: center;
+    background-color: rgba(248, 54, 54, 0.981); 
+    color: white;
 }
