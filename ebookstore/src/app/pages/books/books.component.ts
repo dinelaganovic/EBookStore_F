@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { BookService } from 'src/app/services/book.service';
 
 @Component({
   selector: 'app-books',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class BooksComponent {
 
+  bookList$!:Observable<any[]>;
+
+  constructor(private service:BookService) { }
+
+  ngOnInit(): void {
+    this.bookList$= this.service.getBookList();
+  }
 }

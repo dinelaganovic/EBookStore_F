@@ -1,6 +1,11 @@
 .card{
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 10px;
+    float: center;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    width: 18rem;
     border:2px solid red;
     background-color: rgba(8, 188, 8, 0.764);
 }
@@ -15,7 +20,7 @@ h1{
     text-shadow: 2px 2px #b72525;
     text-align: center; 
     color: rgb(233, 240, 235); 
-    font-size: 35px;
+    font-size: 25px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .card-body{
