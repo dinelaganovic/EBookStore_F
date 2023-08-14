@@ -15,4 +15,9 @@ export class BookService {
 
     return this.http.get<any>(this.baseUrl+ '/Book');
   }
+
+  getAutorList():Observable<any[]> {
+
+    return this.http.get<any>(this.baseUrl+ '/Autor');
+  }
 }

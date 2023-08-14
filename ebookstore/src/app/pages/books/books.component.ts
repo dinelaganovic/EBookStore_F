@@ -10,10 +10,17 @@ import { BookService } from 'src/app/services/book.service';
 export class BooksComponent {
 
   bookList$!:Observable<any[]>;
+  autorList$!:Observable<any[]>;
 
   constructor(private service:BookService) { }
 
   ngOnInit(): void {
     this.bookList$= this.service.getBookList();
+    
+    this.autorList$= this.service.getAutorList();
+
+  }
+  showAllData(item:any) {
+    this.bookList$ = item;
   }
 }

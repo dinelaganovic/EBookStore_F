@@ -27,6 +27,7 @@ import { OrdersComponent } from './pages/userprofile/orders/orders.component';
 import { AllordersComponent } from './pages/userprofile/allorders/allorders.component';
 import { ReppageComponent } from './pages/userprofile/reppage/reppage.component';
 import { BooksComponent } from './pages/books/books.component';
+import { BooksdataComponent } from './pages/books/booksdata/booksdata.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { BooksComponent } from './pages/books/books.component';
     OrdersComponent,
     AllordersComponent,
     ReppageComponent,
-    BooksComponent,  
+    BooksComponent,
+    BooksdataComponent,  
   ],
   imports: [
     BrowserModule,
