@@ -23,7 +23,7 @@
   <div  style="justify-content: center;"  class="row">
     <h1>Top popusti</h1>
   <hr>
-  <div *ngFor="let bk of bookList$|async" class="card" style="width: 18rem;">
+  <div *ngFor="let bk of bookList$|async" class="card">
     <img  src="../../../assets/img/slbk2.png" class="card-img-top" alt="">
     <div *ngFor="let atr of autorList$|async" class="card-body">
       <h5 *ngIf="bk.autor_id==atr.id" class="card-title">{{atr.ime}}</h5>
@@ -44,7 +44,7 @@
   <div style="justify-content: center;"  class="row">
     <h1>Nasi urednici preporucuju</h1>
     <hr>
-<div  *ngFor="let bk of bookList$|async"  class="card" style="width: 18rem;">
+<div  *ngFor="let bk of bookList$|async"  class="card">
   <img  src="../../../assets/img/slbk2.png" class="card-img-top" alt="">
   <div *ngFor="let atr of autorList$|async" class="card-body">
     <h5 *ngIf="bk.autor_id==atr.id" class="card-title">{{atr.ime}}</h5>
