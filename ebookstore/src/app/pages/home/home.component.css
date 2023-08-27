@@ -10,14 +10,15 @@
 {
     top: 30%;
     left: 20%;
-    position: absolute;
 }
 .content h1 
 {
     color: #fff;
     font-size: 60px;
     font-weight: bold;
-  
+    position: absolute;
+    top: 50%;
+    left: 20%; 
 }
 .content a 
 {
@@ -26,6 +27,9 @@
     color: var(--primary-color);
     padding: 15px 20px;
     border-radius: 5px;
+    position: absolute;
+    top: 80%;
+    left: 20%;
 }
 
 .content a:hover 
