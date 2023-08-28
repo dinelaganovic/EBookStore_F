@@ -1,63 +1,5 @@
 <h1>Novi Naslovi</h1>
 <hr>
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" style="color: rgb(7, 136, 7);justify-content: center; text-align: center;" id="staticBackdropLabel">PUT ISTINE online knjižara</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="add-edit-modal-close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm">
-              <h5 style="justify-content: center; color:rgba(248, 54, 54, 0.981); text-align: center;">Naslov</h5>
-            </div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-sm">
-              <b>Cijena:</b>
-            </div>
-          </div><br>
-          <div class="row">
-            <div class="col-sm">
-              <p>Nesto vise o knjizi</p>
-            </div>
-          </div><br>
-          <div class="row">
-            <div class="col-sm">
-              <b>Autor:</b>
-            </div>
-            <div class="col-sm">
-              <b>Izdavac:</b>
-            </div>
-            <div class="col-sm">
-              <b>Godina izdanja:</b>
-            </div>
-          </div><br> 
-          <div class="row">
-            <div class="col-sm">
-              <b>Kategorija:</b>
-            </div>
-            <div class="col-sm">
-              <b>ISBN:</b>
-            </div>
-            <div class="col-sm">
-              <b>Jezik publikacije:</b>
-            </div>
-          </div><br>               
-      </div>
-      <div class="row">
-        <div class="col-sm">
-          <button type="button" class="btn btn-success col-lg-12">Dodaj u korpu <i class="bi bi-cart-plus-fill"></i></button>
-        </div>
-      </div><br>
-        <!--<app-add-edit-hce [hcemployee]="hcemployee" *ngIf="activateAddEditHCEComponent" ></app-add-edit-hce>-->
-      </div>
-    </div>
-  </div>
-</div>
 <div class="container">
   <div style="justify-content: center;"  class="row">
 <div *ngFor="let bk of bookList$|async" class="col-sm-2 card">
@@ -69,7 +11,7 @@
     <ul  class="list-group list-group-flush">
       <li class="list-group-item">NOVO</li>
       <li class="list-group-item">{{bk.cena}} RSD</li>
-      <li class="list-group-item"><a (click)="showAllData(bk.id)" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="card-link">Procitaj vise</a></li>
+      <li class="list-group-item"> <a [routerLink]="['/book',bk.id]"  style="text-decoration: none;" class="card-link">Pročitaj više&nbsp;<i class="bi bi-three-dots-vertical"></i></a></li>
     </ul>
     <div class="card-body">
       <a style="text-align: center;text-decoration: none;padding-top: 15px;" href="/login" class="card-link">Dodaj u korpu <i class="bi bi-cart-plus-fill"></i></a>

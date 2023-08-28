@@ -13,10 +13,12 @@ import { AllbooksComponent } from './pages/userprofile/allbooks/allbooks.compone
 import { DashboardaComponent } from './pages/userprofile/dashboarda/dashboarda.component';
 import { ReppageComponent } from './pages/userprofile/reppage/reppage.component';
 import { BooksComponent } from './pages/books/books.component';
+import { BookComponent } from './pages/book/book.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'books',component: BooksComponent },
+  {path:'book/:id',component:BookComponent},
   {path:'about',component:AboutComponent},
   {path:'contact',component:ContactComponent},
   {path:'login', component:LoginComponent},

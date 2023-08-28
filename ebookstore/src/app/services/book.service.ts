@@ -8,14 +8,16 @@ import { Observable } from 'rxjs';
 export class BookService {
 
   private baseUrl: string="https://localhost:7143/api";
-
+  private baseUrl1: string="https://localhost:7143/api/Book/";
   constructor(private http:HttpClient) { }
 
   getBookList():Observable<any[]> {
 
     return this.http.get<any>(this.baseUrl+ '/Book');
   }
-
+  getBookInfo(id:number){
+    return this.http.get<any[]>(this.baseUrl1+`${id}`);
+  } 
   getAutorList():Observable<any[]> {
 
     return this.http.get<any>(this.baseUrl+ '/Autor');
