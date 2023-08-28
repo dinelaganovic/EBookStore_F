@@ -20,4 +20,8 @@ export class BookService {
 
     return this.http.get<any>(this.baseUrl+ '/Autor');
   }
+  getIzdavacList():Observable<any[]> {
+
+    return this.http.get<any>(this.baseUrl+ '/Izdavac');
+  }
 }
