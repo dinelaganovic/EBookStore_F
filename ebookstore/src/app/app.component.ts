@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Informacioni sistem Zavoda za Javno Zdravlje Sjenica';
+  loggedin(){
+    return localStorage.getItem('token');
+  }
 }

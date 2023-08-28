@@ -30,22 +30,16 @@
         <ng-container  *ngIf="role==='admin'">
             <li class="sidenav-nav-item">
                 <a class="sidenav-nav-link" routerLink="dashboarda" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >
-                    <p class="sidenav-link-icon"><i class="bi bi-house-door"> </i></p>
-                    <span class="sidenav-link-text"  *ngIf="collapsed">Početna Admin</span>
-                </a>
-                </li>
-                <li class="sidenav-nav-item">
-                <a class="sidenav-nav-link" routerLink="allorders" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >
                     <p class="sidenav-link-icon"><i class="bi bi-cart4"></i></p>
-                    <span class="sidenav-link-text"  *ngIf="collapsed">Sve porudžbine</span>
+                    <span class="sidenav-link-text"  *ngIf="collapsed">Porudžbine</span>
                 </a>
-                </li>
-                <li class="sidenav-nav-item">
+            </li>
+            <li class="sidenav-nav-item">
                 <a class="sidenav-nav-link" routerLink="reppage" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >
                     <p class="sidenav-link-icon"><i class="bi bi-card-list"></i></p>
                     <span class="sidenav-link-text"  *ngIf="collapsed">Magacin</span>
                 </a>
-                </li>
+            </li>
         </ng-container>
     </ul>
 </div>
