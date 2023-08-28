@@ -31,7 +31,7 @@
     <ul  class="list-group list-group-flush">
       <li class="list-group-item">NOVO</li>
       <li class="list-group-item">{{bk.cena}} RSD</li>
-      <li class="list-group-item"><a (click)="showAllData(bk.id)" class="card-link">Procitaj vise</a></li>
+      <li class="list-group-item"><a [routerLink]="['/book',bk.id]" class="card-link">Procitaj vise&nbsp;</a></li>
     </ul>
     <div class="card-body">
       <a style="text-align: center;text-decoration: none;padding-top: 15px;" href="/login" class="card-link">Dodaj u korpu <i class="bi bi-cart-plus-fill"></i></a>
@@ -52,7 +52,7 @@
   <ul  class="list-group list-group-flush">
     <li class="list-group-item">NOVO</li>
     <li class="list-group-item">{{bk.cena}} RSD</li>
-    <li class="list-group-item"><a (click)="showAllData(bk.id)" class="card-link">Procitaj vise</a></li>
+    <li class="list-group-item"><a [routerLink]="['/book',bk.id]" class="card-link">Procitaj vise&nbsp;</a></li>
   </ul>
   <div class="card-body">
     <a style="text-align: center;text-decoration: none;padding-top: 15px;" href="/login" class="card-link">Dodaj u korpu <i class="bi bi-cart-plus-fill"></i></a>

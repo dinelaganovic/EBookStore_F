@@ -20,7 +20,4 @@ export class BooksComponent {
     this.autorList$= this.service.getAutorList();
 
   }
-  showAllData(item:any) {
-    this.bookList$ = item;
-  }
 }
