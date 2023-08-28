@@ -24,7 +24,6 @@ import { DashboardComponent } from './pages/userprofile/dashboard/dashboard.comp
 import { DashboardaComponent } from './pages/userprofile/dashboarda/dashboarda.component';
 import { AllbooksComponent } from './pages/userprofile/allbooks/allbooks.component';
 import { OrdersComponent } from './pages/userprofile/orders/orders.component';
-import { AllordersComponent } from './pages/userprofile/allorders/allorders.component';
 import { ReppageComponent } from './pages/userprofile/reppage/reppage.component';
 import { BooksComponent } from './pages/books/books.component';
 import { BooksdataComponent } from './pages/books/booksdata/booksdata.component';
@@ -47,7 +46,6 @@ import { BooksdataComponent } from './pages/books/booksdata/booksdata.component'
     DashboardaComponent,
     AllbooksComponent,
     OrdersComponent,
-    AllordersComponent,
     ReppageComponent,
     BooksComponent,
     BooksdataComponent,  

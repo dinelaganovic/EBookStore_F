@@ -11,7 +11,6 @@ import { DashboardComponent } from './pages/userprofile/dashboard/dashboard.comp
 import { OrdersComponent } from './pages/userprofile/orders/orders.component';
 import { AllbooksComponent } from './pages/userprofile/allbooks/allbooks.component';
 import { DashboardaComponent } from './pages/userprofile/dashboarda/dashboarda.component';
-import { AllordersComponent } from './pages/userprofile/allorders/allorders.component';
 import { ReppageComponent } from './pages/userprofile/reppage/reppage.component';
 import { BooksComponent } from './pages/books/books.component';
 
@@ -27,7 +26,6 @@ const routes: Routes = [
     {path:'orders',component:OrdersComponent},
     {path:'allbooks',component:AllbooksComponent},
     {path:'dashboarda',component: DashboardaComponent},
-    {path:'allorders',component:AllordersComponent},
     {path:'reppage',component:ReppageComponent}
   ]
 }
