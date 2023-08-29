@@ -20,19 +20,11 @@ export class BooksComponent {
     this.autorList$= this.service.getAutorList();
 
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> 0b510758298e04b22f74a4f72fd8ed8556a02727
   showAllData(item:any) {
     this.bookList$ = item;
   }
   loggedin(){
     return localStorage.getItem('token');
-<<<<<<< HEAD
   }
 
 }
-=======
-  }}
->>>>>>> 0b510758298e04b22f74a4f72fd8ed8556a02727
