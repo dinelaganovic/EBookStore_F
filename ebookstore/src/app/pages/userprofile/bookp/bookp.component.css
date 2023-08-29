@@ -3,10 +3,10 @@
     margin: 2%;
     border: 2px solid green;
 }
-form
+.form
 {
     margin-top: 10%;
-    width: 50%;
+    width: 80%;
     display: flex; justify-content: center;
 }
 img 
