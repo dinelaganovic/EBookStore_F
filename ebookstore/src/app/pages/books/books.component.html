@@ -1,22 +1,54 @@
-<div class="container">
-  <div class="row" style="margin-top: 20px;">
-      <div class="col-md-5 mx-auto">
-          <div class="input-group">
-              <input class="form-control border-end-0 border rounded-pill" type="search" value="pretrazite knjigu" id="example-search-input">
-              <span class="input-group-append">
-                  <button class="btn btn-outline-secondary bg-white border-bottom-0 border rounded-pill ms-n5" type="button">
-                      <i class="bi bi-search"></i>
-                  </button>
-              </span>
-          </div>
-      </div>
-  </div>
-</div>
+<app-search (promenatrzenogteksta)="OnsearchTextEntered($event)"></app-search>
 <h1>Novi Naslovi</h1>
 <hr>
 <div class="container">
+  <div style="justify-content: center;" class="row">
+    <ng-container *ngFor="let bk of bookList$ | async">
+      <div *ngIf="pretraga === '' || bk.naslov.toLowerCase().includes(pretraga)" class="col-sm-2 card">
+        <div class="card-body">
+          <img src="../../../assets/img/slbk2.png" class="card-img-top" alt="">
+          <div *ngFor="let atr of autorList$ | async">
+            <h5 *ngIf="bk.autor_id == atr.id" class="card-title">{{ atr.ime }}</h5>
+          </div>
+          <p class="card-text">{{ bk.naslov }}</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">NOVO</li>
+            <li class="list-group-item">{{ bk.cena }} RSD</li>
+            <ng-container *ngIf="!loggedin()">
+              <li class="list-group-item">
+                <a [routerLink]="['/book', bk.id]" style="text-decoration: none;" class="card-link">Pročitaj više&nbsp;<i
+                    class="bi bi-three-dots-vertical"></i></a>
+              </li>
+            </ng-container>
+            <ng-container *ngIf="loggedin()">
+              <li class="list-group-item">
+                <a [routerLink]="['/userprofile/bookp', bk.id]" style="text-decoration: none;" class="card-link">Pročitaj više&nbsp;<i class="bi bi-three-dots-vertical"></i></a>
+              </li>
+            </ng-container>
+          </ul>
+          <div class="card-body">
+            <ng-container *ngIf="!loggedin()">
+              <a style="text-align: center;text-decoration: none;padding-top: 15px;" href="/login"
+                class="card-link">Dodaj u korpu <i class="bi bi-cart-plus-fill"></i></a>
+            </ng-container>
+            <ng-container *ngIf="loggedin()">
+              <a style="text-align: center;text-decoration: none;padding-top: 15px;"
+                [routerLink]="['/userprofile/bookp', bk.id]" class="card-link">Dodaj u korpu <i
+                  class="bi bi-cart-plus-fill"></i></a>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+
+<div class="container">
+  <h1>Top popusti</h1>
+  <hr>
   <div style="justify-content: center;"  class="row">
-<div *ngFor="let bk of bookList$|async" class="col-sm-2 card">
+  <ng-container *ngFor="let bk of bookList$ | async">
+  <div *ngIf="pretraga === '' || bk.naslov.toLowerCase().includes(pretraga)" class="col-sm-2 card">
     <img  src="../../../assets/img/slbk2.png" class="card-img-top" alt="">
     <div *ngFor="let atr of autorList$|async" class="card-body">
       <h5 *ngIf="bk.autor_id==atr.id" class="card-title">{{atr.ime}}</h5>
@@ -41,38 +73,15 @@
       </ng-container>
     </div>
   </div>
+</ng-container>
 </div>
-</div>
-<div class="container">
-  <div  style="justify-content: center;"  class="row">
-    <h1>Top popusti</h1>
-  <hr>
-  <div *ngFor="let bk of bookList$|async" class="card" style="width: 18rem;">
-    <img  src="../../../assets/img/slbk2.png" class="card-img-top" alt="">
-    <div *ngFor="let atr of autorList$|async" class="card-body">
-      <h5 *ngIf="bk.autor_id==atr.id" class="card-title">{{atr.ime}}</h5>
-    </div>
-    <p class="card-text">{{bk.naslov}}</p>
-    <ul  class="list-group list-group-flush">
-      <li class="list-group-item">NOVO</li>
-      <li class="list-group-item">{{bk.cena}} RSD</li>
-      <li class="list-group-item"><a (click)="showAllData(bk.id)" class="card-link">Procitaj vise</a></li>
-    </ul>
-    <div class="card-body">
-      <ng-container *ngIf="!loggedin()">      
-      <a style="text-align: center;text-decoration: none;padding-top: 15px;" href="/login" class="card-link">Dodaj u korpu <i class="bi bi-cart-plus-fill"></i></a>
-      </ng-container>
-      <ng-container *ngIf="loggedin()">
-        <a style="text-align: center;text-decoration: none;padding-top: 15px;" [routerLink]="['/userprofile/bookp',bk.id]"  class="card-link">Dodaj u korpu <i class="bi bi-cart-plus-fill"></i></a>
-      </ng-container></div>
-    </div>
-  </div>
 </div>
 <div class="container">
   <div style="justify-content: center;"  class="row">
-    <h1>Nasi urednici preporucuju</h1>
+   <h1>Nasi urednici preporucuju</h1>
     <hr>
-<div  *ngFor="let bk of bookList$|async"  class="card" style="width: 18rem;">
+  <ng-container *ngFor="let bk of bookList$ | async">
+  <div *ngIf="pretraga === '' || bk.naslov.toLowerCase().includes(pretraga)" class=" col-sm-2 card">
   <img  src="../../../assets/img/slbk2.png" class="card-img-top" alt="">
   <div *ngFor="let atr of autorList$|async" class="card-body">
     <h5 *ngIf="bk.autor_id==atr.id" class="card-title">{{atr.ime}}</h5>
@@ -81,7 +90,13 @@
   <ul  class="list-group list-group-flush">
     <li class="list-group-item">NOVO</li>
     <li class="list-group-item">{{bk.cena}} RSD</li>
-    <li class="list-group-item"><a (click)="showAllData(bk.id)" class="card-link">Procitaj vise</a></li>
+    <ng-container *ngIf="!loggedin()">      
+      <li class="list-group-item"><a [routerLink]="['/book',bk.id]"  style="text-decoration: none;" class="card-link">Pročitaj više&nbsp;<i class="bi bi-three-dots-vertical"></i></a></li>    
+    </ng-container>
+    
+    <ng-container *ngIf="loggedin()">
+      <li class="list-group-item"><a [routerLink]="['/userprofile/bookp',bk.id]"  style="text-decoration: none;" class="card-link">Pročitaj više&nbsp;<i class="bi bi-three-dots-vertical"></i></a></li>    
+    </ng-container>
   </ul>
   <div class="card-body">
     <ng-container *ngIf="!loggedin()">      
@@ -89,7 +104,8 @@
     </ng-container>
     <ng-container *ngIf="loggedin()">
       <a style="text-align: center;text-decoration: none;padding-top: 15px;" [routerLink]="['/userprofile/bookp',bk.id]"  class="card-link">Dodaj u korpu <i class="bi bi-cart-plus-fill"></i></a>
-    </ng-container>  </div>
+    </ng-container></div>
   </div>
-  </div>
+</ng-container>
+</div>
 </div>
