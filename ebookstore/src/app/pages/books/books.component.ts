@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BookService } from 'src/app/services/book.service';
 
@@ -15,13 +15,14 @@ export class BooksComponent {
   constructor(private service:BookService) { }
 
   ngOnInit(): void {
-    this.bookList$= this.service.getBookList();
-    
+    this.bookList$= this.service.getBookList(); 
     this.autorList$= this.service.getAutorList();
-
   }
-  showAllData(item:any) {
-    this.bookList$ = item;
+  pretraga:string="";
+
+  OnsearchTextEntered(prettraga:string){
+    this.pretraga=prettraga;
+    console.log(this.pretraga);
   }
   loggedin(){
     return localStorage.getItem('token');

@@ -27,6 +27,7 @@ import { ReppageComponent } from './pages/userprofile/reppage/reppage.component'
 import { BooksComponent } from './pages/books/books.component';
 import { BookComponent } from './pages/book/book.component';
 import { BookpComponent } from './pages/userprofile/bookp/bookp.component';
+import { SearchComponent } from './pages/search/search.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { BookpComponent } from './pages/userprofile/bookp/bookp.component';
     ReppageComponent,
     BooksComponent,
     BookComponent,
-    BookpComponent,  
+    BookpComponent,
+    SearchComponent,  
   ],
   imports: [
     BrowserModule,
