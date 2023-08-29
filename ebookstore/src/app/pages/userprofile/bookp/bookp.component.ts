@@ -4,6 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { BookService } from 'src/app/services/book.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+
 interface Order{
   kolicina:number,
   adresa:string,
@@ -29,7 +32,7 @@ export class BookpComponent implements OnInit{
   isBVisible=true;
   isCardVisible=false;
   public order:Order;
-constructor( private param: ActivatedRoute, private api: BookService) {
+constructor( private param: ActivatedRoute, private api: BookService, private router: Router, private toast:ToastrService) {
   this.getBookId=this.param.snapshot.paramMap.get('id');
   this.api.getBookInfo(this.getBookId).subscribe((data) => {
     this.bookData = data;
@@ -66,5 +69,7 @@ OnSubmit(id:number){
     book_id: id,
   }
   console.log(this.order)
+  this.toast.success("Uspešno", "Uspešno ste poslali porudžbinu!"); 
+  this.router.navigate(['userprofile/dashboard']);
 }
 }

@@ -88,11 +88,11 @@
         </div>
 
         <div class="col-lg-6 col-12" style="padding-left: 10%; padding-top: 5%;" *ngIf="isCardVisible">
-            <h4>Unesite informacije za vasu porudžbinu</h4>
+            <h4>Unesite informacije za vašu porudžbinu</h4>
             <div class="form">
                 <div class="mb-3">
                 <label class="form-label">Količina:</label>
-                <input type="number" class="form-control" id="kolicina" min="1" max="{{bookData.kolicina}}" placeholder="{{bookData.kolicina}}" />
+                <input type="number" class="form-control" id="kolicina" min="1" max="{{bookData.kolicina}}" value="{{bookData.kolicina}}" />
                 <label class="form-label">Vaš broj telefona:</label>
                 <input type="text" name="mobile" id="telefon" class="form-control" placeholder="broj telefona" />
                 <label class="form-label">Vaša adresa:</label>
