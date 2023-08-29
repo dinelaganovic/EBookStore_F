@@ -42,12 +42,7 @@
     <ul  class="list-group list-group-flush">
       <li class="list-group-item">NOVO</li>
       <li class="list-group-item">{{bk.cena}} RSD</li>
-      <ng-container *ngIf="!loggedin()">      
-        <li class="list-group-item"><a [routerLink]="['/book',bk.id]"  style="text-decoration: none;" class="card-link">Pročitaj više&nbsp;<i class="bi bi-three-dots-vertical"></i></a></li>    
-      </ng-container>
-      <ng-container *ngIf="loggedin()">
-        <li class="list-group-item"><a [routerLink]="['/userprofile/bookp',bk.id]"  style="text-decoration: none;" class="card-link">Pročitaj više&nbsp;<i class="bi bi-three-dots-vertical"></i></a></li>    
-      </ng-container>
+      <li class="list-group-item"><a (click)="showAllData(bk.id)" class="card-link">Procitaj vise</a></li>
     </ul>
     <div class="card-body">
       <ng-container *ngIf="!loggedin()">      
@@ -72,12 +67,7 @@
   <ul  class="list-group list-group-flush">
     <li class="list-group-item">NOVO</li>
     <li class="list-group-item">{{bk.cena}} RSD</li>
-    <ng-container *ngIf="!loggedin()">      
-      <li class="list-group-item"><a [routerLink]="['/book',bk.id]"  style="text-decoration: none;" class="card-link">Pročitaj više&nbsp;<i class="bi bi-three-dots-vertical"></i></a></li>    
-    </ng-container>
-    <ng-container *ngIf="loggedin()">
-      <li class="list-group-item"><a [routerLink]="['/userprofile/bookp',bk.id]"  style="text-decoration: none;" class="card-link">Pročitaj više&nbsp;<i class="bi bi-three-dots-vertical"></i></a></li>    
-    </ng-container>
+    <li class="list-group-item"><a (click)="showAllData(bk.id)" class="card-link">Procitaj vise</a></li>
   </ul>
   <div class="card-body">
     <ng-container *ngIf="!loggedin()">      
