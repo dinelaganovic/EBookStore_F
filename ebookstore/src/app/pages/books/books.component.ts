@@ -26,4 +26,6 @@ export class BooksComponent {
   }
   loggedin(){
     return localStorage.getItem('token');
-  }}
+  }
+
+}
