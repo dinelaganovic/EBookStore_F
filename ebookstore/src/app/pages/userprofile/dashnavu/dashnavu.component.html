@@ -10,20 +10,14 @@
         <ng-container  *ngIf="role==='user'">
             <li class="sidenav-nav-item">
                 <a class="sidenav-nav-link" routerLink="dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >
-                    <p class="sidenav-link-icon"><i class="bi bi-house-door"> </i></p>
-                    <span class="sidenav-link-text"  *ngIf="collapsed">Početna</span>
+                    <p class="sidenav-link-icon"><i class="bi bi-shop-window"></i></p>
+                    <span class="sidenav-link-text"  *ngIf="collapsed">Dostupne knjige</span>
                 </a>
                 </li>
                 <li class="sidenav-nav-item"> 
                     <a class="sidenav-nav-link" routerLink="orders" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >
                     <p class="sidenav-link-icon"><i class="bi bi-bag-check-fill"></i></p>
                     <span class="sidenav-link-text"  *ngIf="collapsed">Moje porudžbine</span>
-                </a>
-                </li>
-                <li class="sidenav-nav-item">
-                <a class="sidenav-nav-link" routerLink="allbooks" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >
-                    <p class="sidenav-link-icon"><i class="bi bi-shop-window"></i></p>
-                    <span class="sidenav-link-text"  *ngIf="collapsed">Dostupne knjige</span>
                 </a>
                 </li>
         </ng-container>

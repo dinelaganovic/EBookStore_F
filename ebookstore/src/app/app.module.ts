@@ -22,11 +22,11 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 import { ToastrModule } from 'ngx-toastr';
 import { DashboardComponent } from './pages/userprofile/dashboard/dashboard.component';
 import { DashboardaComponent } from './pages/userprofile/dashboarda/dashboarda.component';
-import { AllbooksComponent } from './pages/userprofile/allbooks/allbooks.component';
 import { OrdersComponent } from './pages/userprofile/orders/orders.component';
 import { ReppageComponent } from './pages/userprofile/reppage/reppage.component';
 import { BooksComponent } from './pages/books/books.component';
 import { BookComponent } from './pages/book/book.component';
+import { BookpComponent } from './pages/userprofile/bookp/bookp.component';
 
 
 @NgModule({
@@ -44,11 +44,11 @@ import { BookComponent } from './pages/book/book.component';
     UserpanelComponent,
     DashboardComponent,
     DashboardaComponent,
-    AllbooksComponent,
     OrdersComponent,
     ReppageComponent,
     BooksComponent,
-    BookComponent,  
+    BookComponent,
+    BookpComponent,  
   ],
   imports: [
     BrowserModule,

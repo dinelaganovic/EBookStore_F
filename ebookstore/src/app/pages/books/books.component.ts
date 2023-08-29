@@ -23,4 +23,7 @@ export class BooksComponent {
   showAllData(item:any) {
     this.bookList$ = item;
   }
+  loggedin(){
+    return localStorage.getItem('token');
+  }
 }
