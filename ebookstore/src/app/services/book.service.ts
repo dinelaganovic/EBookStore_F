@@ -12,12 +12,15 @@ export class BookService {
   constructor(private http:HttpClient) { }
 
   getBookList():Observable<any[]> {
-
     return this.http.get<any>(this.baseUrl+ '/Book');
   }
   getBookInfo(id:number){
     return this.http.get<any[]>(this.baseUrl1+`${id}`);
-  } 
+  }
+  getSearchBook(naslov:string){
+
+    return this.http.get<any[]>(this.baseUrl1+`/${naslov}`);
+  }  
   getAutorList():Observable<any[]> {
 
     return this.http.get<any>(this.baseUrl+ '/Autor');
