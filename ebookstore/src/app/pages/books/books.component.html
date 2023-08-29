@@ -89,6 +89,7 @@
     <ng-container *ngIf="!loggedin()">      
       <li class="list-group-item"><a [routerLink]="['/book',bk.id]"  style="text-decoration: none;" class="card-link">Pročitaj više&nbsp;<i class="bi bi-three-dots-vertical"></i></a></li>    
     </ng-container>
+    
     <ng-container *ngIf="loggedin()">
       <li class="list-group-item"><a [routerLink]="['/userprofile/bookp',bk.id]"  style="text-decoration: none;" class="card-link">Pročitaj više&nbsp;<i class="bi bi-three-dots-vertical"></i></a></li>    
     </ng-container>
