@@ -18,15 +18,12 @@ export class BookService {
     return this.http.get<any[]>(this.baseUrl1+`${id}`);
   }
   getSearchBook(naslov:string){
-
     return this.http.get<any[]>(this.baseUrl1+`/${naslov}`);
   }  
   getAutorList():Observable<any[]> {
-
     return this.http.get<any>(this.baseUrl+ '/Autor');
   }
   getIzdavacList():Observable<any[]> {
-
     return this.http.get<any>(this.baseUrl+ '/Izdavac');
   }
 }

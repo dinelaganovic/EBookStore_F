@@ -17,7 +17,6 @@ import { RouterModule } from '@angular/router';
 import { DashnavuComponent } from './pages/userprofile/dashnavu/dashnavu.component';
 import { UserpanelComponent } from './pages/userprofile/userpanel/userpanel.component';
 import { AuthService } from './services/auth.service';
-import { ApiService } from './services/api.service';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { ToastrModule } from 'ngx-toastr';
 import { DashboardComponent } from './pages/userprofile/dashboard/dashboard.component';
@@ -28,6 +27,8 @@ import { BooksComponent } from './pages/books/books.component';
 import { BookComponent } from './pages/book/book.component';
 import { BookpComponent } from './pages/userprofile/bookp/bookp.component';
 import { SearchComponent } from './pages/search/search.component';
+import { BookService } from './services/book.service';
+import { OrderService } from './services/order.service';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { SearchComponent } from './pages/search/search.component';
   ],
   providers: [
     AuthService,
-    ApiService,
+    BookService,
+    OrderService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
