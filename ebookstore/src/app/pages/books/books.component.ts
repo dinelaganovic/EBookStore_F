@@ -11,6 +11,7 @@ export class BooksComponent {
 
   bookList$!:Observable<any[]>;
   newbookList$!:Observable<any[]>;
+  topbookList$!:Observable<any[]>;
 
   autorList$!:Observable<any[]>;
 
@@ -18,6 +19,7 @@ export class BooksComponent {
 
   ngOnInit(): void {
     this.newbookList$= this.service.getNewBook();
+    this.topbookList$= this.service.getBookList();
     this.bookList$= this.service.getBookList();  
     this.autorList$= this.service.getAutorList();
   }

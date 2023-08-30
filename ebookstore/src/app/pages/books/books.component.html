@@ -44,10 +44,10 @@
 </div>
 
 <div class="container">
-  <h1>Top popusti</h1>
+  <h1>Top Lista</h1>
   <hr>
   <div style="justify-content: center;"  class="row">
-  <ng-container *ngFor="let bk of bookList$ | async">
+  <ng-container *ngFor="let bk of topbookList$|async">
   <div *ngIf="pretraga === '' || bk.naslov.toLowerCase().includes(pretraga)" class="col-sm-2 card">
     <img  src="../../../assets/img/slbk2.png" class="card-img-top" alt="">
     <div *ngFor="let atr of autorList$|async" class="card-body">
@@ -55,7 +55,7 @@
     </div>
     <p class="card-text">{{bk.naslov}}</p>
     <ul  class="list-group list-group-flush">
-      <li class="list-group-item">NOVO</li>
+      <li class="list-group-item">NAJPRODAVANIJE</li>
       <li class="list-group-item">{{bk.cena}} RSD</li>
       <ng-container *ngIf="!loggedin()">      
         <li class="list-group-item"><a [routerLink]="['/book',bk.id]"  style="text-decoration: none;" class="card-link">Pročitaj više&nbsp;<i class="bi bi-three-dots-vertical"></i></a></li>    
@@ -88,7 +88,6 @@
   </div>
   <p class="card-text">{{bk.naslov}}</p>
   <ul  class="list-group list-group-flush">
-    <li class="list-group-item">NOVO</li>
     <li class="list-group-item">{{bk.cena}} RSD</li>
     <ng-container *ngIf="!loggedin()">      
       <li class="list-group-item"><a [routerLink]="['/book',bk.id]"  style="text-decoration: none;" class="card-link">Pročitaj više&nbsp;<i class="bi bi-three-dots-vertical"></i></a></li>    
