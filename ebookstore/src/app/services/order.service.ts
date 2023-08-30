@@ -18,5 +18,8 @@ export class OrderService {
    // console.log('URL zahteva:', url); 
     return this.http.get<any[]>(url);
   }
- 
+  GetAllOrders(){
+  const url = `${this.baseUrl}`;
+  return this.http.get<any[]>(url);
+ }
 }

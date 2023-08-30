@@ -20,7 +20,10 @@ export class AuthService {
   signUp(userObj: any){
     return this.http.post<any>(`${this.baseUrl}register`, userObj)
   }
-
+  getAllUsers(){
+    const url = `${this.baseUrl}`;
+  return this.http.get<any[]>(url);
+  }
   storeToken(tokenValue: string){
     localStorage.setItem('token',tokenValue)
   }
