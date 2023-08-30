@@ -10,12 +10,15 @@ import { BookService } from 'src/app/services/book.service';
 export class BooksComponent {
 
   bookList$!:Observable<any[]>;
+  newbookList$!:Observable<any[]>;
+
   autorList$!:Observable<any[]>;
 
   constructor(private service:BookService) { }
 
   ngOnInit(): void {
-    this.bookList$= this.service.getBookList(); 
+    this.newbookList$= this.service.getNewBook();
+    this.bookList$= this.service.getBookList();  
     this.autorList$= this.service.getAutorList();
   }
   pretraga:string="";
