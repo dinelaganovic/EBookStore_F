@@ -28,7 +28,19 @@ export class ReppageComponent {
       },
       (error: any) => {
         // Handle errors here
-        console.error('Error:', error);//ubaci ovde ya refresh stranicu
+        console.error('Error:', error);//ubaci ovde ya refresh stranicu i toster za obavestenje
       });
       }
+      
+      isporuciorder(id:number,kolicina:number) {
+          this.order.DeliveredOrder(id,kolicina).subscribe((res: any) => {
+            // Handle the successful response here
+            console.log('Response:', res);
+            // You can perform further actions based on the response
+          },
+          (error: any) => {
+            // Handle errors here
+            console.error('Error:', error);//ubaci ovde ya refresh stranicu i toster za obavestenje
+          });
+          }
 }

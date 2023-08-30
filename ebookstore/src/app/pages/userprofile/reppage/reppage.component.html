@@ -30,7 +30,7 @@
                     <td>Odobri <i style="background-color: transparent !important;" (click)="updateorder(ord.id)" class="bi bi-bag-check-fill"></i></td>
                 </ng-container>
                 <ng-container *ngIf="ord.status==='odobreno'">
-                    <td>Isporuci<i style="background-color: transparent !important;" class="bi bi-bookmark-check-fill"></i></td>
+                    <td>Isporuci<i style="background-color: transparent !important;" (click)="isporuciorder(ord.id,ord.kolicina)" class="bi bi-bookmark-check-fill"></i></td>
                 </ng-container>
 
         </tr>

@@ -25,4 +25,7 @@ export class OrderService {
  ApproveOrder(id:number){
   return this.http.put(this.baseUrl+ `/${id}/odobriti`,id);
 }
+DeliveredOrder(id:number,numOrder:number){
+  return this.http.put(this.baseUrl+ `/${id}/isporuciti`,id);
+}
 }
