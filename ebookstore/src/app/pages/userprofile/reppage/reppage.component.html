@@ -10,29 +10,31 @@
         <th>Telefon</th>
         <th>Akcija</th>
     </tr>
-    <tr *ngFor="let ord of orderList$|async" >
-        <td><i style="background-color: transparent !important; " class="bi bi-bag-check"></i></td>
-        <ng-container *ngIf="ord.status==='poslato' || ord.status==='odobreno'">
-            <ng-container *ngFor="let book of bookList$|async">
-                <ng-container *ngIf="ord.book_id===book.id">
-                    <td>{{book.naslov}}</td>
+    <ng-container *ngFor="let ord of orderList$|async"  >
+        <tr *ngIf="ord.status==='poslato' || ord.status==='odobreno'">
+            <td><i style="background-color: transparent !important; " class="bi bi-bag-check"></i></td>
+                <ng-container *ngFor="let book of bookList$|async">
+                    <ng-container *ngIf="ord.book_id===book.id">
+                        <td>{{book.naslov}}</td>
+                    </ng-container>
                 </ng-container>
-            </ng-container>
-            <ng-container *ngFor="let user of userList$|async">
-                <ng-container *ngIf="ord.user_id===user.id">
-                    <td>{{user.firstName}} {{user.lastName}}</td>
+                <ng-container *ngFor="let user of userList$|async">
+                    <ng-container *ngIf="ord.user_id===user.id">
+                        <td>{{user.firstName}} {{user.lastName}}</td>
+                    </ng-container>
                 </ng-container>
-            </ng-container>
-            <td>{{ord.kolicina}}</td>
-            <td>{{ord.adresa}}</td>
-            <td>{{ord.telefon}}</td>
-            <ng-container *ngIf="ord.status==='poslato'">
-                <td>Odobri <i style="background-color: transparent !important;" class="bi bi-bag-check-fill"></i></td>
-            </ng-container>
-            <ng-container *ngIf="ord.status==='odobreno'">
-                <td>Isporuci<i style="background-color: transparent !important;" class="bi bi-bookmark-check-fill"></i></td>
-            </ng-container>
-        </ng-container>
-    </tr>
+                <td>{{ord.kolicina}}</td>
+                <td>{{ord.adresa}}</td>
+                <td>{{ord.telefon}}</td>
+                <ng-container *ngIf="ord.status==='poslato'">
+                    <td>Odobri <i style="background-color: transparent !important;" class="bi bi-bag-check-fill"></i></td>
+                </ng-container>
+                <ng-container *ngIf="ord.status==='odobreno'">
+                    <td>Isporuci<i style="background-color: transparent !important;" class="bi bi-bookmark-check-fill"></i></td>
+                </ng-container>
+
+        </tr>
+    </ng-container>
+    
     </table>
   </div>
