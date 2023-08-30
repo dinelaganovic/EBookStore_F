@@ -19,7 +19,7 @@ export class BooksComponent {
 
   ngOnInit(): void {
     this.newbookList$= this.service.getNewBook();
-    this.topbookList$= this.service.getBookList();
+    this.topbookList$= this.service.getTopListBook();
     this.bookList$= this.service.getBookList();  
     this.autorList$= this.service.getAutorList();
   }
