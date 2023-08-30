@@ -25,7 +25,7 @@ export class BookService {
   }
   getSearchBook(naslov:string){
     return this.http.get<any[]>(this.baseUrl1+`/${naslov}`);
-  }  
+  } 
   getAutorList():Observable<any[]> {
     return this.http.get<any>(this.baseUrl+ '/Autor');
   }

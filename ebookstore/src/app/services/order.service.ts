@@ -22,4 +22,7 @@ export class OrderService {
   const url = `${this.baseUrl}`;
   return this.http.get<any[]>(url);
  }
+ ApproveOrder(id:number){
+  return this.http.put(this.baseUrl+ `/${id}/odobriti`,id);
+}
 }

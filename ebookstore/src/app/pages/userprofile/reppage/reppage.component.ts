@@ -18,4 +18,17 @@ export class ReppageComponent {
     this.orderList$=this.order.GetAllOrders();
     this.userList$=this.auth.getAllUsers();
   }
+
+  updateorder(order:number) {
+    console.log(order)
+      this.order.ApproveOrder(order).subscribe((res: any) => {
+        // Handle the successful response here
+        console.log('Response:', res);
+        // You can perform further actions based on the response
+      },
+      (error: any) => {
+        // Handle errors here
+        console.error('Error:', error);//ubaci ovde ya refresh stranicu
+      });
+      }
 }
