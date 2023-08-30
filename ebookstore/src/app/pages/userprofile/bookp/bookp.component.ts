@@ -6,13 +6,15 @@ import { BookService } from 'src/app/services/book.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { OrderService } from 'src/app/services/order.service';
 
 interface Order{
   kolicina:number,
   adresa:string,
   telefon:string,
   user_id:number,
-  book_id:number
+  book_id:number,
+  status:string
 }
 @Component({
   selector: 'app-bookp',
@@ -32,7 +34,7 @@ export class BookpComponent implements OnInit{
   isBVisible=true;
   isCardVisible=false;
   public order:Order;
-constructor( private param: ActivatedRoute, private api: BookService, private router: Router, private toast:ToastrService) {
+constructor( private param: ActivatedRoute, private api: BookService, private router: Router, private toast:ToastrService, private ord:OrderService) {
   this.getBookId=this.param.snapshot.paramMap.get('id');
   this.api.getBookInfo(this.getBookId).subscribe((data) => {
     this.bookData = data;
@@ -67,9 +69,18 @@ OnSubmit(id:number){
     telefon: telefon,
     user_id: this.user_id,
     book_id: id,
+    status:"poslato"
   }
   console.log(this.order)
-  this.toast.success("Uspešno", "Uspešno ste poslali porudžbinu!"); 
-  this.router.navigate(['userprofile/dashboard']);
+  this.ord.addOrder(this.order)
+  .subscribe({
+    next:(res)=>{
+      this.toast.success("Uspešno", "Uspešno ste poslali porudžbinu!"); 
+      this.router.navigate(['userprofile/dashboard']);
+    },
+    error:(err)=>{
+      this.toast.error("Neuspešno", "Nešto nije u redu!"); 
+    }
+  }) 
 }
 }
