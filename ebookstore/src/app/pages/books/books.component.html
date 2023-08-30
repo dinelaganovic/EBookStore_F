@@ -3,7 +3,7 @@
 <hr>
 <div class="container">
   <div style="justify-content: center;" class="row">
-    <ng-container *ngFor="let bk of bookList$ | async">
+    <ng-container *ngFor="let bk of newbookList$ | async">
       <div *ngIf="pretraga === '' || bk.naslov.toLowerCase().includes(pretraga)" class="col-sm-2 card">
         <div class="card-body">
           <img src="../../../assets/img/slbk2.png" class="card-img-top" alt="">

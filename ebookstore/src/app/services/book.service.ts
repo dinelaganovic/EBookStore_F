@@ -17,6 +17,9 @@ export class BookService {
   getBookInfo(id:number){
     return this.http.get<any[]>(this.baseUrl1+`${id}`);
   }
+  getNewBook():Observable<any[]>{
+    return this.http.get<any[]>(this.baseUrl1+'paginacija');
+  }
   getSearchBook(naslov:string){
     return this.http.get<any[]>(this.baseUrl1+`/${naslov}`);
   }  
