@@ -2,6 +2,7 @@ import { animate, keyframes, style, transition, trigger } from '@angular/animati
 import { Component, Output, EventEmitter, OnInit, HostListener } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserstoreService } from 'src/app/services/userstore.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 interface sidenavtoggle {
   screenWidth: number;
   collapsed: boolean;
@@ -41,7 +42,7 @@ interface sidenavtoggle {
 
 export class DashnavuComponent implements OnInit {
   public role:string;
-
+  token:any;
   @Output() onToggleSideNav: EventEmitter<sidenavtoggle> = new EventEmitter();
   collapsed = false;
   screenWidth = 0;
@@ -59,18 +60,21 @@ constructor( private auth: AuthService, private store: UserstoreService){
   }
 
   ngOnInit(): void {
-
   this.screenWidth = window.innerWidth;
   this.store.getRoleFromStore()
   .subscribe(val=>{
     const role= this.auth.getRoleFromToken();
     this.role=val|| role;
   })
-  this.store.getUserInfoFromStore()
- .subscribe(val =>{
-  let infU:[] =this.auth.getArrayUFromToken();
-  this.userinfo= infU;
- })
+  this.token=localStorage.getItem('token');
+  const jwtHelper= new JwtHelperService();
+  const dtoken1:any=jwtHelper.decodeToken(this.token);
+  this.userinfo=dtoken1.unique_name;
+  //this.store.getUserInfoFromStore()
+ //.subscribe(val =>{
+ // let infU:[] =this.auth.getArrayUFromToken();
+ // this.userinfo= infU;
+ //})
   }
 
   toggleCollapse(): void {
