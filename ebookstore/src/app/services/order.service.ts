@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 export class OrderService {
   private baseUrl="https://localhost:7143/api/Order";
   private baseUrl1="https://localhost:7143/api/Order/";
+  private baseUrl2="https://localhost:7143/api/Order";
+
 
   constructor(private http:HttpClient) { }
   addOrder(orderObj: any){
@@ -26,6 +28,7 @@ export class OrderService {
   return this.http.put(this.baseUrl+ `/${id}/odobriti`,id);
 }
 DeliveredOrder(id:number,numOrder:number){
-  return this.http.put(this.baseUrl+ `/${id}/isporuciti`,id);
+  const params = new HttpParams().set('deliveredQuantity', numOrder.toString());
+  return this.http.put(this.baseUrl2 + `/${id}/isporuciti`, null, { params });
 }
 }
