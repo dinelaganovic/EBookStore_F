@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { BookService } from 'src/app/services/book.service';
@@ -13,7 +15,7 @@ export class ReppageComponent {
   orderList$!:Observable<any[]>;
   userList$!:Observable<any[]>;
 
-  constructor(private api:BookService, private order:OrderService, private auth:AuthService){
+  constructor(private api:BookService, private order:OrderService, private auth:AuthService, private router:Router, private toast: ToastrService){
     this.bookList$= this.api.getBookList();
     this.orderList$=this.order.GetAllOrders();
     this.userList$=this.auth.getAllUsers();
@@ -22,25 +24,23 @@ export class ReppageComponent {
   updateorder(order:number) {
     console.log(order)
       this.order.ApproveOrder(order).subscribe((res: any) => {
-        // Handle the successful response here
-        console.log('Response:', res);
-        // You can perform further actions based on the response
-      },
+        this.toast.success("Uspešno", "Uspešno ste odobrili ste zahtev!"); 
+        this.router.navigate(['userprofile/reppage']);      },
       (error: any) => {
-        // Handle errors here
-        console.error('Error:', error);//ubaci ovde ya refresh stranicu i toster za obavestenje
+        this.toast.error("Neuspešno!"); 
+            this.router.navigate(['userprofile/reppage']);
       });
       }
       
       isporuciorder(id:number,kolicina:number) {
+        console.log(id,kolicina)
           this.order.DeliveredOrder(id,kolicina).subscribe((res: any) => {
-            // Handle the successful response here
-            console.log('Response:', res);
-            // You can perform further actions based on the response
+            this.toast.success("Uspešno", "Uspešna isporuka!"); 
+            this.router.navigate(['/reppage']);
           },
           (error: any) => {
-            // Handle errors here
-            console.error('Error:', error);//ubaci ovde ya refresh stranicu i toster za obavestenje
+            this.toast.error("Neuspešno!"); 
+            this.router.navigate(['/reppage']);
           });
           }
 }
